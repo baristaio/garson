@@ -2,7 +2,7 @@
 const controller = require('./controller');
 
 const actionsMap: any = {
-  doIt: async(connection:any, payload: any, logger: any) => controller.doIt(logger, connection, payload),
+  doIt: async (connection:any, payload: any, logger: any) => controller.doIt(logger, connection, payload),
 };
 
 // === IMPLEMENTATION ===
