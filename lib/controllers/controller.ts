@@ -5,11 +5,15 @@ export const doIt = (logger: any, connections: any, payload:any) => {
 };
 
 const checkHealth = () => ({ health: 'OK' });
-export const health = (/* logger, connections*/) => {
+const health = (/* logger, connections*/) => {
   return new Promise(resolve =>
         resolve({
           status: 200,
           body: checkHealth(),
         }),
     );
+};
+export default {
+  doIt,
+  health,
 };

@@ -1,6 +1,6 @@
 
 import express = require('express');
-import controller = require('./controller');
+import controller from './controller';
 
 const health = async(logger: any, connection: any, req: express.Request) => {
   return controller.health();

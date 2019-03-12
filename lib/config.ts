@@ -3,7 +3,7 @@ export default  {
   host: process.env.HOST || '127.0.0.1',
   name: 'The Gateway, API service',
   description: 'The Gateway Service',
-  connections: {
+  connections: [{
     type: 'amqp',
     name: 'amqp',
     descriptor: {
@@ -13,7 +13,7 @@ export default  {
         password: process.env.RABBIT_PASSW || 'guest',
       },
     },
-  },
+  }],
   subQueue: process.env.SUB_QUEUE || 'sub_test_task',
   pubQueue: process.env.PUB_QUEUE || 'pub_test_task',
 

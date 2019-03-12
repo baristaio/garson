@@ -26,3 +26,10 @@ http requests should provide security token
 - http/s
 - amqp
 
+
+
+####
+Run Rabbitmq docker:
+```$bash
+docker run -d --hostname rabbitmq --name rabbitmq -p 15672:15672  -p 5672:5672 -p 5671:5671  rabbitmq:3-management
+```

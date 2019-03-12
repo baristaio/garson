@@ -6,15 +6,14 @@ const subscribers = [
     queue: process.env.SUB_QUEUE || 'sub_test_task',
     pubQueue: {
       queue: process.env.PUB_QUEUE || 'pub_test_task',
-      durable: true
+      durable: true,
     },
     durable: true,
     noAck: false,
-    controller: async(message, {logger, connections}) => actions.doAction(message, {logger, connections})
-  }
+    controller: async(message:any, logger:any, connections:any) => actions.doAction(message, logger, connections),
+  },
 ];
 
-module.exports = {
-  api: subscribers
+export default  {
+  subscribers,
 };
-
