@@ -6,18 +6,18 @@ const actionsMap: any = {
 };
 
 // === IMPLEMENTATION ===
-async function doAction(message: any, logger: any, connections: any) {
-  logger.info(`Proceed ${message}`);
+async function doAction(message: any, serviceObj:any) {
+  serviceObj.logger.info(`Proceed ${message}`);
   return new Promise<any>((resolve, reject) => {
     try {
-      const { action, payload } = validate(logger, message);
+      const { action, payload } = validate(serviceObj.logger, message);
       console.log(`AMQP do action ${action}`);
       const doAction = actionsMap[action];
       if (!doAction) {
         reject(new Error(`The '${action}' does not exists.`));
       }
     }  catch (err) {
-      logger.error(err);
+      serviceObj.logger.error(err);
       resolve(err);
     }
   });
