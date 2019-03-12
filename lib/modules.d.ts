@@ -1,0 +1,2 @@
+
+declare module '@baristaio/espresso';
