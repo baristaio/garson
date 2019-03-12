@@ -4,7 +4,14 @@
   "description": "The service dispatcher and flow manager",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "dev": "ts-node ./src/index.ts",
+    "start": "nodemon ./dist/index.js",
+    "prod": "npm run build && npm run start",
+    "test": "mocha -r ts-node/register src/**/*.spec.ts",
+    "full-test": "nyc mocha -r ts-node/register src/**/*.spec.ts",
+    "coverage": "nyc --reporter html --reporter text npm test",
+    "cov-test": "nyc --reporter=text mocha src/**/*.ts"
   },
   "repository": {
     "type": "git",
