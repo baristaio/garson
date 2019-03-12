@@ -1,3 +1,10 @@
 {
-  "extends": "tslint-config-airbnb"
+  "extends": "tslint-config-airbnb",
+  "max-line-length": [
+    true,
+    {
+      "limit": 140,
+      "ignore-pattern": "^import |^export {(.*?)}"
+    }
+  ]
 }

@@ -1,4 +1,4 @@
-const controllers = require('./controllers/controller');
+import controllers from './controllers';
 
 const routes = [
   {
@@ -7,18 +7,18 @@ const routes = [
     method: 'GET',
     controller: controllers.health,
   },
-  {
-    headers: { 'Content-Type': 'application/json' },
-    route: '/action',
-    method: 'POST',
-    controller: controllers.doAction,
-  },
-  {
-    headers: { 'Content-Type': 'application/json' },
-    route: '/execute',
-    method: 'POST',
-    controller: controllers.execute,
-  },
+  // {
+  //   headers: { 'Content-Type': 'application/json' },
+  //   route: '/action',
+  //   method: 'POST',
+  //   controller: controllers.doAction,
+  // },
+  // {
+  //   headers: { 'Content-Type': 'application/json' },
+  //   route: '/execute',
+  //   method: 'POST',
+  //   controller: controllers.execute,
+  // },
 ];
 
 export default {
