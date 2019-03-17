@@ -1,8 +1,8 @@
 export default  {
   port: process.env.PORT || 3000,
   host: process.env.HOST || '127.0.0.1',
-  name: 'The Gateway, API service',
-  description: 'The Gateway Service',
+  name: 'Flow manager service',
+  description: 'Flow state machine service',
   connections: [{
     type: 'amqp',
     name: 'amqp',

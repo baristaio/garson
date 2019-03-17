@@ -1,11 +1,18 @@
-import controllers from './controllers';
+import httpControllers  from './controllers/httpControllers';
 
 const routes = [
   {
     headers: { 'Content-Type': 'application/json' },
     route: '/health',
     method: 'GET',
-    controller: controllers.health,
+    controller: httpControllers.health,
+  },
+  {
+    headers: { 'Content-Type': 'application/json' },
+    route: '/action',
+    method: 'POST',
+    controller: httpControllers.doAction,
+    pubQueue: process.env.PUB_QUEUE || 'pub_test_task',
   },
   // {
   //   headers: { 'Content-Type': 'application/json' },

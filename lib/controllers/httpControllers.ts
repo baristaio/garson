@@ -6,14 +6,24 @@ const health = async(logger: any, connection: any, req: express.Request) => {
   return controller.health();
 };
 
-const doIt = async(logger: any, connection: any, req: express.Request) => {
-  const data = req.query;
-  return controller.doIt(logger, connection, data);
+const doAction = async(logger: any, connection: any, req: express.Request) => {
+  logger.info('Video Handler Start:...');
+  const message = JSON.stringify(req.body);
+  logger.info(`Proceed ${message}`);
+  return new Promise<any>((resolve, reject) => {
+    try {
+      const { doAction, payload } = controller.validate(logger, message);
+      resolve(doAction(connection, payload, logger));
+    }  catch (err) {
+      logger.error(err);
+      resolve(err);
+    }
+  });
 };
 
 export default {
   health,
-  doIt,
+  doAction,
 };
 // const enrich = async(logger, connection, req) => {
 //   logger.info('Enrich model request');

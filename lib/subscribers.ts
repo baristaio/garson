@@ -10,7 +10,7 @@ const subscribers = [
     },
     durable: true,
     noAck: false,
-    controller: async(message:any, logger:any, connections:any) => actions.doAction(message, logger, connections),
+    controller: async(message:any, logger:any, connections:any) => actions.doAction(message, logger, connections) ,
   },
 ];
 
